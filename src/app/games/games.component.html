@@ -1,0 +1,16 @@
+<div class="container mt-4">
+  <p class="font-bold font-sans text-3xl text-center">Games List</p>
+  <hr />
+  <div class="d-grid gap-4" style="grid-template-columns: repeat(3, 1fr)">
+    @for (game of games; track game.id) {
+    <app-game-card
+      [game]="game"
+      (handleSendData)="handleReciveData($event)"
+    ></app-game-card>
+    } @empty {
+    <div class="col-12 text-center">
+      <p>Data not Found</p>
+    </div>
+    }
+  </div>
+</div>

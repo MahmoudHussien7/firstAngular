@@ -1,0 +1,25 @@
+<div class="justify-content-center mb-4">
+  <div class="card" style="width: 22rem">
+    <img
+      [src]="game.image"
+      class="card-img-top"
+      alt="Game Image"
+      style="max-width: 100%; max-height: 400px"
+    />
+    <div class="card-body" style="object-fit: contain">
+      <h3 class="card-title font-serif text-start text-xl font-semibold">
+        {{ game.title }}
+      </h3>
+      <p class="card-text text-start">{{ game.description }}</p>
+      <hr />
+      @if (game.onSale) {<span class="badge text-bg-danger w-24">onSale</span
+      ><br /><br />
+      }
+      <del style="color: brown">{{ game.price }}$</del><span> </span>
+      <span>{{ game.discountedPrice }}$</span>
+    </div>
+    <button class="btn btn-danger" (click)="handleDelete(game.id)">
+      delete
+    </button>
+  </div>
+</div>
